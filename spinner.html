@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html manifest="cache-manifest.manifest">
+  <head>
+    <title>Spinner</title>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <link rel="apple-touch-icon" href="iphoneicon.png" />
+    <link rel="apple-touch-startup-image" href="iphonelaunch.png" />
+
+    <link rel="stylesheet" type="text/css" href="spinner.css" />
+
+    <script type='text/javascript' src='spinner.js' charset='utf-8'></script>
+  </head>
+
+  <body onload="setup(); drawBoard(); drawSpinner();" onunload="forgetdom()">
+    <div id="content">
+    <div id="perspective">
+      <div id="card">
+        <div id="front">
+          <div id="display">
+            <canvas id="boardcanvas" width="300" height="300" style="position:absolute; left:0px; top:0px; z-index=1; display=none"></canvas>
+            <canvas id="spinnercanvas" width="300" height="300" style="position:absolute; left:0px; top:0px; z-index=2" onclick="startSpinner();"></canvas>
+            <label id="wedgelabel" align="center" onclick="startSpinner();">Spinner</label>
+          </div>
+          <a href="#back" class="button" id="flipbutton" onclick="showBack();">Settings...</a>
+        </div>
+
+        <div id="back">
+          <a href="#about" id="showabout">About...</a>
+          <textarea id="divnames" rows="4" onKeyPress="divNameChange();" placeholder="Wedge Names"></textarea>
+          <input id="savename" placeholder="Name"/>
+          <a href="#" class="button" id="save">Save</a>
+          <select id="saveddivs" onChange="loadWedgeGroup();"></select>
+          <a href="#front" class="button" id="done">Done</a>
+        </div>
+      </div>
+    </div>
+    <div id="about">
+      <p><em>Spinner</em> (v 1.0) was created by <a href="http://beerriot.com/bryan.html" id="bryan">Bryan Fink</a>.  The iPhone webapp and Dashboard widget forms of it can be obtained at <a href="http://spinner.beerriot.com/" id="homepage">http://spinner.beerriot.com/</a></p>
+      <a href="#" class="button" id="closeabout">Close</a>
+    </div>
+    </div>
+  </body>
+</html>

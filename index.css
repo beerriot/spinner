@@ -1,0 +1,55 @@
+body {
+    background: #000;
+    font-family: Helvetica;
+    color: #fff;
+    line-height: 1.5em;
+}
+
+#container {
+    width: 900px;
+    position:relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#explanation {
+    width: 900px;
+}
+
+#explanation h1, p, ul {
+    margin-left: 426px;
+    margin-right: 10px;
+}
+
+p.disclaimer {
+    font-size: smaller;
+}
+
+li {
+    list-style: none;
+}
+
+#phonedemo {
+    background: url(iphoneframe.png);
+    position: absolute;
+    top: 0px;
+    left: 10px;
+    width: 386px;
+    height: 729px;
+}
+
+#video {
+    position: absolute;
+    top: 130px;
+    left: 32px;
+    width: 320px;
+    height: 480px;
+}
+
+img {
+    vertical-align: middle;
+}
+
+a {
+    color: #fff;
+}

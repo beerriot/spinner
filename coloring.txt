@@ -1,0 +1,44 @@
+Colors          Code            Angle
+------          ----            -----
+red             FF0000          0
+yellow          FFFF00          pi/3
+green           00FF00          2pi/3
+cyan            00FFFF          pi
+blue            0000FF          4pi/3
+magenta         FF00FF          5pi/3
+
+m = 255/(pi/3)
+
+Ranges           Red        Green       Blue
+------           ---        -----       ----
+0-pi/3           Max        Increasing  Min
+pi/3-2pi/3       Decreasing Max         Min
+2pi/3-pi         Min        Max         Increasing
+pi-4pi/3         Min        Decreasing  Max
+4pi/3-5pi/3      Increasing Min         Max
+5pi/3-2pi        Max        Min         Decreasing
+
+else if(angle > 0 && angle < pi/3) {
+	 red = m(pi/3-angle)
+	 blue = 0
+}
+else if(angle > pi/3 && angle < 2pi/3) {
+     red = 255
+     blue = 0
+}
+else if(angle > 2pi/3 && angle < pi) {
+     red = 0
+     blue = m(angle-2pi/3)
+}
+else if(angle > pi && angle < 4pi/3) {
+     red = 0
+     blue = m(4pi/3-angle)
+}
+else if(angle > 4pi/3 && angle < 5pi/3 {
+     red = 0
+}
+if(angle > 5pi/3 && angle < 2pi) {
+	 red = m(angle-5pi/3)
+}
+
+if(angle > pi/3 

@@ -1,0 +1,240 @@
+body {
+	margin: 0;
+        background: #000;
+        font-size: 17pt;
+        font-family: Helvetica;
+}
+
+body.widget {
+    background: rgba(0, 0, 0, 0);
+}
+
+#content {
+    width: 300px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+body.widget #content {
+    width: 200px;
+}
+
+#perspective {
+    -webkit-perspective: 600;
+    z-index:5;
+}
+
+#card {
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition-property: -webkit-transform;
+    -webkit-transition-duration: 0.75s;
+}
+
+#card.fliphalf {
+    /* workaround for broken -webkit-backface-visibility */
+    -webkit-transform: rotateY(90deg);
+    -webkit-transition-timing-function: ease-in;
+}
+#card.flipped {
+    -webkit-transform: rotateY(180deg);
+}
+
+#back, #front {
+        width: 300px;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+}
+
+body.widget #back, body.widget #front {
+    width: 200px;
+}
+
+#display {
+    width:300px;
+    height:300px;
+    position:relative;
+}
+body.widget #display {
+    width: 200px;
+    height: 200px;
+}
+
+#back {
+    -webkit-transform: rotateY(180deg);
+    visibility: hidden;
+    background: url(backside.svg);
+    height: 300px;
+}
+body.widget #back {
+    -webkit-transform: none;
+    background: url(backsidewidget.svg);
+    height:200px;
+}
+
+#showabout {
+    position: absolute;
+    font-size: 12px;
+    left: 128px;
+    top: 270px;
+    color: #fff;
+}
+
+body.widget #showabout {
+    left: 83px;
+    top: 177px;
+}
+
+#done {
+	position: absolute;
+	top: 230px;
+	left: 125px;
+	z-index: 5;
+}
+body.widget #done {
+    top: 154px;
+    left: 79px;
+}
+
+#divnames {
+	position: absolute;
+	top: 40px;
+	left: 28px;
+        width: 128px;
+}
+
+#savename {
+	position: absolute;
+	top: 105px;
+	left: 28px;
+	width: 96px;
+}
+
+#save {
+	position: absolute;
+        top: 159px;
+        left: 208px;
+}
+body.widget #save {
+	top: 106px;
+	left: 139px;
+}
+
+#saveddivs {
+	position: absolute;
+	top: 125px;
+	left: 28px;
+	width: 121px;
+}
+
+#wedgelabel {
+	position: absolute;
+	display: none;
+	top: 150px;
+	left: 0px;
+	width: 300px;
+	text-align: center;
+	font-family: Verdana;
+	color: #ffffff;
+        text-shadow: rgba(0, 0, 0, 0.6) 1px 1px 1px;
+}
+body.widget #wedgelabel {
+    top: 100px;
+    width: 200px;
+}
+
+input, select, textarea {
+    zoom: 150%;
+    z-index: 1;
+}
+
+body.widget input, body.widget select, body.widget textarea {
+    zoom: 100%;
+}
+
+textarea {
+    padding: 2px 6px;
+    -webkit-border-radius: 5px 5px;
+    z-index: 1;
+}
+
+input {
+    padding: 2px 6px;
+    border: 1px solid #000;
+    -webkit-border-radius: 5px 5px;
+}
+
+.button {
+    position: absolute;
+    width: auto;
+    min-width: 18px;
+    height: 30px;
+    padding: 0 3px;
+
+    line-height: 30px;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+
+    color: #fff;
+    background: none;
+    border-width: 0 5px;
+    -webkit-text-size-adjust: none;
+    -webkit-border-image: url(buttonback.png) 0 5 0 5;
+}
+
+body.widget .button {
+    height: 20px;
+    line-height: 20px;
+}
+
+.button.disabled {
+    -webkit-border-image: url(buttonbackdis.png) 0 5 0 5;
+    color: #999;
+}
+
+#flipbutton {
+    left: 113px;
+}
+body.widget #flipbutton {
+    left: 63px;
+}
+
+#about {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    top: -282px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.9);
+    z-index:100;
+    font-size: 17px;
+    text-align: center;
+    border: 1px solid #999;
+    -webkit-border-radius: 5px 5px;
+    -webkit-transition-property: top;
+    -webkit-transition-duration: 0.75s;
+}
+
+body.widget #about {
+    width: 180px;
+    height: 180px;
+    font-size: 14px;
+}
+
+#about p {
+    color: #fff;
+    padding: 5px;
+    line-height: 1.5em;
+}
+
+#closeabout {
+    left: 114px;
+    top: 230px;
+}
+
+body.widget #closeabout {
+    left: 66px;
+    top: 154px;
+}
