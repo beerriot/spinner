@@ -56,28 +56,39 @@ function setup() {
     else
         webappSetup();
 
-    //load most recently used wedge names
-    elts.divnames.value = getPref("wedgeNames") || "No,Yes";
+    selectLastWedgeGroup = true;
+    if (window.location.hash &&
+        window.location.hash.indexOf("#wedgeNames:") == 0) {
+        selectLastWedgeGroup = false;
+        elts.divnames.value = window.location.hash.substring(12);
+    } else {
+        //load most recently used wedge names
+        elts.divnames.value = getPref("wedgeNames") || "No,Yes";
+    }
     setupWedges(elts.divnames.value);
 
     loadWedgeGroupNames();
 
-    var wedgeGroupString = getPref("selectedWedgeGroup");
+    if (selectLastWedgeGroup) {
+        var wedgeGroupString = getPref("selectedWedgeGroup");
 
-    if(wedgeGroupString) {
-        elts.savename.value = wedgeGroupString;
-        for(i = 0; i < elts.saveddivs.length; i++) {
-	    if(elts.saveddivs.options[i].value == wedgeGroupString) {
-	        elts.saveddivs.selectedIndex = i;
-	    }
+        if(wedgeGroupString) {
+            elts.savename.value = wedgeGroupString;
+            for(i = 0; i < elts.saveddivs.length; i++) {
+	        if(elts.saveddivs.options[i].value == wedgeGroupString) {
+	            elts.saveddivs.selectedIndex = i;
+	        }
+            }
+
+            setSavedState();
         }
-
-        setSavedState();
+    } else {
+        elts.saveddivs.selectedIndex = -1;
     }
-    
+
     elts.done.style.left = 67;
     elts.done.onclick = hideBack;
-    
+
     elts.save.onclick = saveWedgeGroup;
 
     elts.showabout.onclick = function() {
